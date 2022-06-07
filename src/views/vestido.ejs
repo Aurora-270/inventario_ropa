@@ -1,0 +1,53 @@
+<%- layout('layouts/main') %>
+<br>
+<div class="row mb-5">
+  <div class="col-md-8 mx-auto text-center ">
+    <h1> <font face = "Times New Roman"> Vestidos</font> </h1>
+    <a href="/agregar-vestido" class="btn btn-success btn-sm">Agregar vestido</a>
+  </div>
+</div>
+
+
+
+<table class="table table-hover table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">num</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Modelo</th>
+        <th scope="col">Talla</th>
+        <th scope="col">Color</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+        <% for(var i=0; i < medi.length; i++) {%>
+            <tr>
+                <td><%= i+1%></td>
+                <td><%= medi[i].Marca %></td>
+                <td><%= medi[i].Modelo %></td>
+                <td><%= medi[i].Talla %></td>
+                <td><%= medi[i].Color %></td>
+                <td><%= medi[i].Precio %></td>
+                <td><%= medi[i].Cantidad %></td>
+                <td>
+                    <a href="/delete_m/<%= medi[i]._id %>" class="btn btn-danger btn-sm">Eliminar</a>
+                    <a href="/editar-vestido/<%= medi[i]._id%>" class="btn btn-info btn-sm">Editar</a>
+                </td>
+            </tr>                   
+        <%}%>
+        
+    </tbody>
+  </table>
+
+
+  <!--div class="row mb-5">
+    <div class="col-md-8 mx-auto text-center ">
+    <img src="/static/images/pastillas.png"  height="250" width="200"/>
+    </div>
+  </div-->
+<br>
+<br>
+

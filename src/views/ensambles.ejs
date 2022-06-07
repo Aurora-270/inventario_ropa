@@ -1,0 +1,51 @@
+<%- layout('layouts/main') %>
+<br>
+<div class="row mb-5">
+  <div class="col-md-8 mx-auto text-center ">
+    <h1> <font face = "Times New Roman"> Ensambles</font> </h1>
+    <a href="/agregar-ensambles" class="btn btn-success btn-sm">Agregar ensamble</a>
+  </div>
+</div>
+
+<table class="table table-hover table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">num</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Modelo</th>
+        <th scope="col">Talla</th>
+        <th scope="col">Color</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+        <% for(var i=0; i < produ.length; i++) {%>
+            <tr>
+                <td><%= i+1%></td>
+                <td><%= produ[i].Marca %></td>
+                <td><%= produ[i].Modelo %></td>
+                <td><%= produ[i].Talla %></td>
+                <td><%= produ[i].Color %></td>
+                <td><%= produ[i].Precio %></td>
+                <td><%= produ[i].Cantidad %></td>
+                <td>
+                    <a href="/delete_p/<%= produ[i]._id %>" class="btn btn-danger btn-sm">Eliminar</a>
+                    <a href="/editar-ensambles/<%= produ[i]._id%>" class="btn btn-info btn-sm">Editar</a>
+                </td>
+            </tr>                   
+        <%}%>
+        
+  </tbody>
+</table>
+
+
+<!--div class="row mb-5">
+  <div class="col-md-8 mx-auto text-center ">
+    <img src="/static/images/productos_farma.png"  height="250" width="350"/>
+  </div>
+</div-->
+<br>
+<br>
+
